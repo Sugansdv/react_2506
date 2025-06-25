@@ -10,7 +10,7 @@ const JobList = () => {
       try {
         const response = await axios.get('https://www.arbeitnow.com/api/job-board-api');
         console.log("API Response:", response.data);
-        setJobs(response.data.data.slice(0, 20)); // limit to 20 jobs
+        setJobs(response.data.data.slice(0, 20)); 
       } catch (error) {
         console.error('Error fetching jobs:', error);
       } finally {
@@ -26,7 +26,7 @@ const JobList = () => {
 
   return (
     <div className="container mt-4">
-      <h3 className="mb-4">Latest Jobs (Arbeitnow API)</h3>
+      <h3 className="mb-4">Latest Jobs</h3>
       <div className="row">
         {jobs.map((job, index) => (
           <div className="col-md-6 mb-4" key={index}>
